@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="MySQL - diplom@localhost" uuid="2cf3d3ed-591e-4d1a-b2ed-8f90f6ecfd60">
+      <secret-storage>master_key</secret-storage>
+      <user-name>root</user-name>
+      <introspection-scope>diplom:</introspection-scope>
+      <resolve-scope>diplom:</resolve-scope>
+    </data-source>
+  </component>
+</project>
