@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, HttpResponseRedirect
 from Diplom.models import User
 from Diplom.authorization import Auth
 
@@ -39,10 +39,11 @@ def signup(request):
             firstname = request.POST['firstname']
             lastname = request.POST['lastname']
             phone = request.POST['phone']
+            position = request.POST['position']
             if password != repeat_password:
                 return render(request, 'signup.html')
             else:
-                User.objects.create_user(email, password, firstname, lastname, phone)
+                User.objects.create_user(email, password, firstname, lastname, phone, position)
                 return render(request, 'signin.html')
     except Exception as e:
         print(e)

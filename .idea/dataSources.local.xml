@@ -7,5 +7,11 @@
       <introspection-scope>diplom:</introspection-scope>
       <resolve-scope>diplom:</resolve-scope>
     </data-source>
+    <data-source name="Django default" uuid="96d10968-f2e7-47f6-81f8-29f412960c2b">
+      <user-name>root</user-name>
+      <user-password>df9bdf98df99df9e</user-password>
+      <introspection-scope>diplom:</introspection-scope>
+      <resolve-scope>diplom:</resolve-scope>
+    </data-source>
   </component>
 </project>

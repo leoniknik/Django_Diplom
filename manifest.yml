@@ -1,0 +1,4 @@
+---
+applications:
+- name: django_diplom
+  command: sh run.sh
