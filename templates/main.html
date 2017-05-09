@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+    <h4>Привет, ты зашел как {{ user.username }}</h4>
+    {% comment %}<script src="{% static "js/week.js" %}"></script>{% endcomment %}
+{% endblock %}

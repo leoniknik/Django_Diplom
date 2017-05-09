@@ -15,8 +15,13 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from django.contrib.auth import views as auth_views
+from Diplom import views as diplom_views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-
+    url(r'^$', diplom_views.main, name='main'),
+    url(r'^signin/$', auth_views.login, {'template_name': 'signin.html'},  name='signin'),
+    url(r'^signup/$', diplom_views.signup, name='signup'),
+    url(r'^signout/$', auth_views.logout, {'next_page': '/login'}, name='signout'),
 ]
