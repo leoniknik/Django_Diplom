@@ -75,17 +75,23 @@ WSGI_APPLICATION = 'Django_Diplom.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'ad_b3578dcc1b37819',
+#         'USER': 'b2249e14cee29e',
+#         'PASSWORD': '71949ec4',
+#         'HOST': 'us-cdbr-iron-east-04.cleardb.net',
+#         'PORT': '3306',
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'ad_b3578dcc1b37819',
-        'USER': 'b2249e14cee29e',
-        'PASSWORD': '71949ec4',
-        'HOST': 'us-cdbr-iron-east-04.cleardb.net',
-        'PORT': '3306',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators
