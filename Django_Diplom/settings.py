@@ -25,7 +25,7 @@ SECRET_KEY = 'pjn1a1ki&y$e94z$jpw7(!a)lnzstw%13c=gzjiz9v@#xh%_z+'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*', '.mybluemix.net']
 
 
 # Application definition
@@ -124,3 +124,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
