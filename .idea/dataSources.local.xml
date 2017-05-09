@@ -7,5 +7,9 @@
       <introspection-scope>ad_b3578dcc1b37819:</introspection-scope>
       <resolve-scope>ad_b3578dcc1b37819:</resolve-scope>
     </data-source>
+    <data-source name="Sqlite (Xerial) - db.sqlite3" uuid="4c997ebf-5eaa-4f0c-8cc6-8b7ebba942c1">
+      <secret-storage>master_key</secret-storage>
+      <auth-required>false</auth-required>
+    </data-source>
   </component>
 </project>

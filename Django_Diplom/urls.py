@@ -23,5 +23,5 @@ urlpatterns = [
     url(r'^$', diplom_views.main, name='main'),
     url(r'^signin/$', auth_views.login, {'template_name': 'signin.html'},  name='signin'),
     url(r'^signup/$', diplom_views.signup, name='signup'),
-    url(r'^signout/$', auth_views.logout, {'next_page': '/login'}, name='signout'),
+    url(r'^signout/$', auth_views.logout, {'next_page': '/signin'}, name='signout'),
 ]
