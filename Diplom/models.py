@@ -1,6 +1,9 @@
 from django.db import models
 from django.contrib.auth.models import BaseUserManager
 from django.contrib.auth.base_user import AbstractBaseUser
+from django.contrib.auth.models import User
+from django.db.models.signals import post_save
+from django.dispatch import receiver
 
 """
 class UserManager(BaseUserManager):
@@ -45,3 +48,52 @@ class User(AbstractBaseUser):
         return self.firstname
 """
 
+
+class UserType(models.Model):
+    name = models.TextField(verbose_name='name', default="")
+
+
+class Profile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    phone = models.TextField(verbose_name='phone', default="")
+    user_type = models.ForeignKey(UserType, null=True)
+
+    @receiver(post_save, sender=User)
+    def create_user_profile(sender, instance, created, **kwargs):
+        if created:
+            Profile.objects.create(user=instance)
+
+    @receiver(post_save, sender=User)
+    def save_user_profile(sender, instance, **kwargs):
+        instance.profile.save()
+
+
+class Channel(models.Model):
+    number = models.IntegerField(verbose_name='number', default=0)
+    is_busy = models.BooleanField(verbose_name='is_busy', default=False, db_index=True)
+    raspberry = models.ForeignKey(Raspberry, null=True)
+
+
+class Raspberry(models.Model):
+    room = models.TextField(verbose_name='room', default="")
+    domain = models.TextField(verbose_name='domain', default="")
+
+
+class DeviceType(models.Model):
+    name = models.TextField(verbose_name='name', default="")
+
+
+class Device(models.Model):
+    user_type = models.ForeignKey(DeviceType, null=True)
+    channel = models.ForeignKey(Channel, null=True)
+
+
+class DeviceData(models.Model):
+    data = models.IntegerField(verbose_name='data', default=0)
+
+
+class Rule(models.Model):
+    user = models.ForeignKey(User, null=True)
+    device = models.ForeignKey(Device, null=True)
+    time = models.TextField(verbose_name='time', default="")
+    mode = models.BooleanField(verbose_name='mode', default=False)

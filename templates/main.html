@@ -2,6 +2,43 @@
 {% load staticfiles %}
 
 {% block content %}
-    <h4>Привет, ты зашел как {{ user.username }}</h4>
-    {% comment %}<script src="{% static "js/week.js" %}"></script>{% endcomment %}
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8"></div>
+            <div class="col-sm-4">
+                <div class="table-responsive">
+                    <table class="table table-bordered table-hover">
+                        <caption class="text-center">Информация о текущем пользователе</caption>
+                        <tbody>
+                        <tr>
+                            <td>Username</td>
+                            <td>{{ user.username }}</td>
+                        </tr>
+                        <tr>
+                            <td>Имя</td>
+                            <td>{{ user.first_name }}</td>
+                        </tr>
+                        <tr>
+                            <td>Фамилия</td>
+                            <td>{{ user.last_name }}</td>
+                        </tr>
+                        <tr>
+                            <td>Права</td>
+                            <td>{{ user.profile.user_type.name }}</td>
+                        </tr>
+                        <tr>
+                            <td>E-mail</td>
+                            <td>{{ user.email }}</td>
+                        </tr>
+                        <tr>
+                            <td>Phone</td>
+                            <td>{{ user.profile.phone }}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
 {% endblock %}
