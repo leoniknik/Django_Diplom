@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth.models import BaseUserManager
 from django.contrib.auth.base_user import AbstractBaseUser
 
-
+"""
 class UserManager(BaseUserManager):
     def create_user(self, email, password, firstname, lastname, phone, position):
         user = self.model(email=self.normalize_email(email), firstname=firstname, lastname=lastname, phone=phone, position=position)
@@ -43,3 +43,4 @@ class User(AbstractBaseUser):
 
     def get_short_name(self):
         return self.firstname
+"""

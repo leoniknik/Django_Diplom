@@ -1,3 +1,4 @@
+"""
 from Diplom.models import User
 
 
@@ -17,3 +18,4 @@ class Auth(object):
             return User.objects.get(email=email)
         except User.DoesNotExist:
             return None
+"""

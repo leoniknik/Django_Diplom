@@ -1,17 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal">
-    <data-source name="MySQL - diplom@localhost" uuid="2cf3d3ed-591e-4d1a-b2ed-8f90f6ecfd60">
+    <data-source name="MySQL - ad_b3578dcc1b37819@us-cdbr-iron-east-04.cleardb.net" uuid="f43ab3ae-c57b-4ce2-88f5-653eed41aaec">
       <secret-storage>master_key</secret-storage>
-      <user-name>root</user-name>
-      <introspection-scope>diplom:</introspection-scope>
-      <resolve-scope>diplom:</resolve-scope>
-    </data-source>
-    <data-source name="Django default" uuid="96d10968-f2e7-47f6-81f8-29f412960c2b">
-      <user-name>root</user-name>
-      <user-password>df9bdf98df99df9e</user-password>
-      <introspection-scope>diplom:</introspection-scope>
-      <resolve-scope>diplom:</resolve-scope>
+      <user-name>b2249e14cee29e</user-name>
+      <introspection-scope>ad_b3578dcc1b37819:</introspection-scope>
+      <resolve-scope>ad_b3578dcc1b37819:</resolve-scope>
     </data-source>
   </component>
 </project>

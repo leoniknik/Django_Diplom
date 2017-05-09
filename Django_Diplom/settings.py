@@ -78,9 +78,11 @@ WSGI_APPLICATION = 'Django_Diplom.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'diplom',
-        'USER': 'root',
-        'PASSWORD': '1234',
+        'NAME': 'ad_b3578dcc1b37819',
+        'USER': 'b2249e14cee29e',
+        'PASSWORD': '71949ec4',
+        'HOST': 'us-cdbr-iron-east-04.cleardb.net',
+        'PORT': '3306',
     }
 }
 
