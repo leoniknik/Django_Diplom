@@ -68,15 +68,15 @@ class Profile(models.Model):
         instance.profile.save()
 
 
+class Raspberry(models.Model):
+    room = models.CharField(verbose_name='room', max_length=255, default="")
+    domain = models.CharField(verbose_name='domain', max_length=255, default="")
+
+
 class Channel(models.Model):
     number = models.IntegerField(verbose_name='number', default=0)
     is_busy = models.BooleanField(verbose_name='is_busy', default=False, db_index=True)
-    raspberry = models.ForeignKey(Raspberry, null=True)
-
-
-class Raspberry(models.Model):
-    room = models.TextField(verbose_name='room', default="")
-    domain = models.TextField(verbose_name='domain', default="")
+    raspberry = models.ForeignKey(Raspberry, null=True, blank=True)
 
 
 class DeviceType(models.Model):
@@ -84,7 +84,7 @@ class DeviceType(models.Model):
 
 
 class Device(models.Model):
-    user_type = models.ForeignKey(DeviceType, null=True)
+    device_type = models.ForeignKey(DeviceType, null=True)
     channel = models.ForeignKey(Channel, null=True)
 
 
